@@ -1,5 +1,5 @@
 
-module KeyBoardHero
+module keyboardhero
 	(
 		CLOCK_50,						//	On Board 50 MHz
 		// Your inputs and outputs here
@@ -161,8 +161,8 @@ module keyboard_hero(
 		 // if reset is pressed score and combo starts at 0
 	    if(!resetn) begin
 			  state <= 0;
-			  data_result <= 0;
-			  combo_result <= 0;
+			  score <= 0;
+			  combo <= 0;
        end
 		 
 		 //initial state to determine the x pos for the key pos
@@ -171,37 +171,37 @@ module keyboard_hero(
 				 x_pos <= 60;
 				 //if the y_pos of the keyblock matches the y pos of the first block add point
 				 if(x_pos <= x_2 && y_pos <= y_2) begin
-					data_result <= data_result + 1;
-					combo_result <= combo_result + 1;
+					score <= score + 1;
+					combo <= combo + 1;
 							
 				 end
 				 //otherwise combo starts back at 0
 				 else begin
-					 combo_result <= 0;
+					 combo <= 0;
 				 end
 			end
 		   if(~key2) begin
 				  x_pos <= 70;
 				  //if the y_pos of the keyblock matches the y pos of the second block add point
 				  if(x_pos <= x_4 && y_pos <= y_4) begin
-				     data_result <= data_result + 1;
-					  combo_result <= combo_result + 1;
+				     score <= score + 1;
+					  combo <= combo + 1;
 				  end
 				  //otherwise combo starts back at 0
 				  else begin
-				      combo_result <= 0;
+				      combo <= 0;
 				  end
 			end	
 			if(~key1) begin
 				 x_pos <= 80;
 				 //if the y_pos of the keyblock matches the y pos of the third block add point
 				 if(x_pos <= x_3 && y_pos <= y_3) begin
-					 data_result <= data_result + 1;
-					 combo_result <= combo_result + 1;
+					 score <= score + 1;
+					 combo <= combo + 1;
 				 end
 				  //otherwise combo starts back at 0
 				 else begin
-					 combo_result <= 0;
+					 combo <= 0;
 				 end
 			end
 			//initial y pos and state move
