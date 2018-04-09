@@ -217,6 +217,7 @@ module keyboard_hero(
 					state <= 2;
 					clear <=1;
 			  end
+      // idea inspired by https://github.com/nathan78906/CaveCatchers
 		//state for x initial pos of the block falling down and movement of y block
 		else if(state == 4'd2) begin
 					
@@ -250,6 +251,7 @@ module keyboard_hero(
 					 state <= 4;
 			  end
 		
+		// idea inspired by https://github.com/nathan78906/CaveCatchers
 		//this state is for reseting the blocks after reached the bottom
 		else if(state == 4'd3) begin
 			
